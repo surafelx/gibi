@@ -34,8 +34,6 @@ public class Common extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common);
-        String userId = fAuth.getInstance().getCurrentUser().getUid();
-        checkUserAccessLevel(userId);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -52,7 +50,7 @@ public class Common extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
-                .setDrawerLayout(drawer)
+                .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
@@ -68,10 +66,10 @@ public class Common extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.action_logout:
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getApplicationContext(),Login.class));
+                startActivity(new Intent(getApplicationContext(), Login.class));
                 finish();
                 return true;
 
@@ -79,29 +77,6 @@ public class Common extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void checkUserAccessLevel(String userId){
-        fStore = FirebaseFirestore.getInstance();
-        DocumentReference df = fStore.collection("Users").document(userId);
-        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                if(documentSnapshot.getString("isRegistrar") != null) {
-                    setContentView(R.layout.activity_main);
-//                } else if(documentSnapshot.getString("isStudent") != null){
-//                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
-//                    finish();
-//                }
-//                else if(documentSnapshot.getString("isDepartment") != null){
-//                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
-//                    finish();
-//                }
-                }
-                    else{
-                        setContentView(R.layout.activity_common);
-                    }
 
-            }
-        });
-    }
 
 }
