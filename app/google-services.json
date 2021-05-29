@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "454700620483",
+    "project_id": "gibi-1a821",
+    "storage_bucket": "gibi-1a821.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454700620483:android:de0d7ef8654d24f0afa076",
+        "android_client_info": {
+          "package_name": "com.srfl.gibi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454700620483-dhr5k2s5dob0oe402af8bj5t2tcc20hi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDT_pv0n-VPmsfSR7njhwR6c6u5zXAM7fw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454700620483-dhr5k2s5dob0oe402af8bj5t2tcc20hi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
