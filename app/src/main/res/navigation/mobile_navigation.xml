@@ -12,14 +12,24 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.srfl.gibi.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_student"
+        android:name="com.srfl.gibi.ui.student.StudentFragment"
+        android:label="@string/menu_student"
+        tools:layout="@layout/fragment_student" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.srfl.gibi.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_department"
+        android:name="com.srfl.gibi.ui.department.DepartmentFragment"
+        android:label="@string/menu_department"
+        tools:layout="@layout/fragment_department" />
+    <fragment
+        android:id="@+id/nav_instructor"
+        android:name="com.srfl.gibi.ui.instructor.InstructorFragment"
+        android:label="@string/menu_instructor"
+        tools:layout="@layout/fragment_instructor" />
+    <fragment
+        android:id="@+id/nav_course"
+        android:name="com.srfl.gibi.ui.course.CourseFragment"
+        android:label="@string/menu_course"
+        tools:layout="@layout/fragment_course" />
 </navigation>

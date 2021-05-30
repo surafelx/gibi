@@ -10,6 +10,9 @@
     <string name="action_logout">Logout</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_department">Department</string>
+    <string name="menu_instructor">Instructor</string>
+    <string name="menu_student">Student</string>
+    <string name="menu_course">Course</string>
+
 </resources>
