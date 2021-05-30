@@ -32,6 +32,7 @@ public class Common extends AppCompatActivity {
     FirebaseFirestore fStore;
     FirebaseAuth fAuth;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +68,13 @@ public class Common extends AppCompatActivity {
     }
 
     @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+                || super.onSupportNavigateUp();
+    }
+
+        @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.action_logout:
@@ -74,10 +82,11 @@ public class Common extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),Login.class));
                 finish();
                 return true;
-
         }
         return super.onOptionsItemSelected(item);
     }
 
 
 }
+
+
