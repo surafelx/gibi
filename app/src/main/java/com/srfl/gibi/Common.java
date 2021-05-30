@@ -27,6 +27,8 @@ import androidx.appcompat.widget.Toolbar;
 public class Common extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    private String userAccessLevel;
+    private String userId;
     FirebaseFirestore fStore;
     FirebaseAuth fAuth;
 
@@ -50,7 +52,7 @@ public class Common extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
-                .setOpenableLayout(drawer)
+                .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
@@ -66,17 +68,16 @@ public class Common extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
+        switch (item.getItemId()){
             case R.id.action_logout:
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getApplicationContext(), Login.class));
+                startActivity(new Intent(getApplicationContext(),Login.class));
                 finish();
                 return true;
 
         }
         return super.onOptionsItemSelected(item);
     }
-
 
 
 }

@@ -104,10 +104,10 @@ public class Login extends AppCompatActivity {
         });
 
         // TODO - Authenticate User Again and Again
-//        if(fAuth.getCurrentUser() != null){
-//            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-//            finish();
-//        }
+        if(fAuth.getCurrentUser() != null){
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            finish();
+        }
 
         mCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
