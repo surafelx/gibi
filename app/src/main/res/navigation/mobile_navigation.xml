@@ -32,4 +32,9 @@
         android:name="com.srfl.gibi.ui.course.CourseFragment"
         android:label="@string/menu_course"
         tools:layout="@layout/fragment_course" />
+    <fragment
+        android:id="@+id/studentCreateEdit"
+        android:name="com.srfl.gibi.studentCreateEdit"
+        android:label="fragment_student_create_edit"
+        tools:layout="@layout/fragment_student_create_edit" />
 </navigation>

@@ -27,6 +27,8 @@ public class StudentFragment extends Fragment implements OnDataAdded {
     StudentAdapter studentAdapter;
     private static final String TAG = "StudentFragment";
 
+
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         studentViewModel =
